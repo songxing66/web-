@@ -1,0 +1,132 @@
+﻿<!DOCTYPE HTML>
+<html>
+    <meta charset="UTF-8">
+
+    <head>
+        <title>一个抓色器</title>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+
+    <body>
+        <header>
+            <section class="script-bar claerfix">
+                <div class="scriot-btn files-icon left">
+                    <input type="file" id="fileUpload" />
+                </div>
+                <!--<div class="scriot-btn sclea-jian-icon left" id="sclea-jian" data-jiajian>
+            </div>
+            <div class="scriot-btn sclea-jia-icon left" id="sclea-jia" data-jiajian>
+            </div>-->
+                <div class="scriot-btn sclea-left-icon left" id="sclea-left" data-rotate>
+
+                </div>
+                <div class="scriot-btn sclea-right-icon left" id="sclea-right" data-rotate>
+
+                </div>
+                <div class="scriot-btn list-icon right" id="list-color-btn">
+                    <div class="btn-main"></div>
+                </div>
+            </section>
+        </header>
+
+        <section class="draw">
+            <div id="draw-box">
+                <canvas id="canvas" width="0" height="0">
+                </canvas>
+                <div class="drash-X" id="drash-X" data-dash-line></div>
+                <div class="drash-Y" id="drash-Y" data-dash-line></div>
+                <div class="color-info" id="drsh-info">
+                    <div class="color-info-text"></div>
+                    <div class="color-info-box"></div>
+                </div>
+                <div class="stop-draw"></div>
+            </div>
+            <div class="info" id="currentColor"></div>
+            <img id="temp" />
+
+        </section>
+        <aside class="mycolorbox" data-colorlist data-hidden="true">
+            <div class="piex-info"  data-piex-info></div>
+            <ul id="color-peix">
+
+            </ul>
+            <ul class="mycolorlist">
+                <li class="claerfix mycolorliin" id="color-list1">
+                    <span class="color-script-btn left" data-clear-color>清除</span>
+                    <input class="left color-input" data-color-input readonly="true" /><span class="color-show left" data-color-show></span><span class="color-script-btn left" data-copy-btn>复制</span>
+                </li>
+                <li class="claerfix mycolorliin" id="color-list2">
+                    <span class="color-script-btn left" data-clear-color>清除</span>
+                    <input class="left color-input" data-color-input readonly="true" /><span class="color-show left" data-color-show></span><span class="color-script-btn left" data-copy-btn>复制</span>
+                </li>
+                <li class="claerfix mycolorliin" id="color-list3">
+                    <span class="color-script-btn left" data-clear-color>清除</span>
+                    <input class="left color-input" data-color-input readonly="true" /><span class="color-show left" data-color-show></span><span class="color-script-btn left" data-copy-btn>复制</span>
+                </li>
+                <li class="claerfix mycolorliin" id="color-list4">
+                    <span class="color-script-btn left" data-clear-color>清除</span>
+                    <input class="left color-input" data-color-input readonly="true" /><span class="color-show left" data-color-show></span><span class="color-script-btn left" data-copy-btn>复制</span>
+                </li>
+                <li class="claerfix mycolorliin" id="color-list5">
+                    <span class="color-script-btn left" data-clear-color>清除</span>
+                    <input class="left color-input" data-color-input readonly="true" /><span class="color-show left" data-color-show></span><span class="color-script-btn left" data-copy-btn>复制</span>
+                </li>
+                <li class="claerfix mycolorliin" id="color-list6">
+                    <span class="color-script-btn left" data-clear-color>清除</span>
+                    <input class="left color-input" data-color-input readonly="true" /><span class="color-show left" data-color-show></span><span class="color-script-btn left" data-copy-btn>复制</span>
+                </li>
+                <li class="claerfix mycolorliin" id="color-list7">
+                    <span class="color-script-btn left" data-clear-color>清除</span>
+                    <input class="left color-input" data-color-input readonly="true" /><span class="color-show left" data-color-show></span><span class="color-script-btn left" data-copy-btn>复制</span>
+                </li>
+                <li class="claerfix mycolorliin" id="color-list8">
+                    <span class="color-script-btn left" data-clear-color>清除</span>
+                    <input class="left color-input" data-color-input readonly="true" /><span class="color-show left" data-color-show></span><span class="color-script-btn left" data-copy-btn>复制</span>
+                </li>
+                <li class="claerfix mycolorliin" id="color-list9">
+                    <span class="color-script-btn left" data-clear-color>清除</span>
+                    <input class="left color-input" data-color-input readonly="true" /><span class="color-show left" data-color-show></span><span class="color-script-btn left" data-copy-btn>复制</span>
+                </li>
+                <li class="claerfix mycolorliin" id="color-list10">
+                    <span class="color-script-btn left" data-clear-color>清除</span>
+                    <input class="left color-input" data-color-input readonly="true" /><span class="color-show left" data-color-show></span><span class="color-script-btn left" data-copy-btn>复制</span>
+                </li>
+
+            </ul>
+            <ul id="scriptbox">
+                <li class="script-list claerfix">
+                    <div class="left data-copy-box">
+                        <textarea readonly="true" id="data-copy1"></textarea>
+                    </div>
+                    <div class="left data-copy-btn">
+                        <span>复制</span>
+                    </div>
+                </li>
+                <li class="script-list claerfix">
+                    <div class="left data-copy-box">
+                        <textarea readonly="true" id="data-copy2"></textarea>
+                    </div>
+                    <div class="left data-copy-btn">
+                        <span>复制</span>
+                    </div>
+                </li>
+                <li class="script-list claerfix">
+                    <div class="left data-copy-box">
+                        <textarea readonly="true" id="data-copy3"></textarea>
+                    </div>
+                    <div class="left data-copy-btn">
+                        <span>复制</span>
+                    </div>
+                </li>
+
+            </ul>
+            <div class="clear-clolor-btn" data-clear-all>清除所有</div>
+            <div class="clear-clolor-btn" data-scprit>生成脚本</div>
+        </aside>
+
+        <script src="js/jquery-2.1.3.min.js" type="text/javascript"></script>
+        <script src="js/fishcomponent.js"></script>
+        <script src="js/script.min.js"></script>
+    </body>
+
+</html>
